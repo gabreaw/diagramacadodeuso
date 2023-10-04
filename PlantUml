@@ -1,0 +1,29 @@
+Os clientes vão ao mercado para comprar produtos.
+Os caixas passam os produtos dos clientes
+Os funcionários cuidam do estoque de produtos e outras tarefas no mercado.
+Os gerentes supervisionam o mercado e gerenciam o estoque.
+Dentro do mercado, temos algumas coisas que podem ser feitas:
+- Os clientes podem procurar produtos
+- Eles podem colocar produtos nos carrinhos de compras
+- Eles podem pagar pelos produtos
+- Funcionários e gerentes podem gerenciar o estoque dos produtos.
+@startuml
+left to right direction
+actor Cliente as C
+actor Caixa as Ca
+actor Funcionário as F
+actor Gerente as G
+rectangle Mercado {
+usecase "Pesquisar Produtos" as Pesquisar
+usecase "Adicionar ao Carrinho" as Adicionar
+usecase "Realizar Pagamento" as Pagamento
+usecase "Gerenciar Estoque" as Estoque
+}
+C -- Pesquisar
+C -- Adicionar
+C -- Pagamento
+F -- Estoque
+G -- Estoque
+Ca -- Pagamento
+Ca -- Adicionar
+@enduml
